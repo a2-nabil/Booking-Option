@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Option</title>
+  </head>
+  <style>
+    #a2n_exam-board {
+      font-family: "sen";
+      max-width: 452px;
+      background: #282830;
+      border-radius: 5px;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0px 0px 4px 0px #dcdcdc;
+    }
+    .a2n_exam-board-single-option {
+      position: relative;
+      background: #fff;
+      border-radius: 5px;
+      color: #303030;
+      font-size: 15px;
+      margin-bottom: 12px;
+      padding: 10px 15px 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #a2n_exam-board .checkbox-container {
+      display: inline-block;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    #a2n_exam-board .checkbox-container .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 8px;
+      top: 5px;
+      width: 6px;
+      height: 9px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    #a2n_exam-board .checkbox-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    #a2n_exam-board > .a2n_board-sec-title {
+      font-family: "sen";
+      font-weight: 700;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    #a2n_exam-board .a2n_exam-board-single-option label {
+      font-weight: bold;
+    }
+    #a2n_exam-board .checkbox-container input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+    }
+    #a2n_exam-board .checkmark {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      background-color: #fff;
+      border: 1px solid #af1f47;
+    }
+    #a2n_exam-board
+      label.checkbox-container
+      p.la-show-black-friday-countdown-reminder {
+      margin: 10px auto 5px;
+    }
+    #a2n_exam-board
+      label.checkbox-container
+      p.la-show-black-friday-countdown-reminder {
+      font-weight: bold;
+      background: #fdfd47;
+      color: #000 !important;
+      padding: 5px 12px;
+      border-radius: 6px;
+    }
+    .a2n_exam-board-single-option .entire-variable-discount {
+      color: #af1f47;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .a2n_exam-board-single-option-price {
+      min-width: 94px;
+      padding-left: 0px;
+      text-align: right;
+      padding-right: 12px;
+    }
+    .a2n_exam-board-single-option .entire-variable-prices > span:first-child {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .a2n_exam-board-single-option
+      .entire-variable-prices
+      > span.course-prev-price-wrap {
+      text-decoration: line-through;
+    }
+    #a2n_exam-board .checkbox-container input:checked ~ .checkmark {
+      background-color: #af1f47;
+    }
+    .a2n_exam-board-single-option:has(> label > input[type="radio"]:checked) {
+      background: #fef0f8;
+    }
+    #a2n_exam-board-total {
+      background: #fff;
+      border-radius: 5px;
+      margin-bottom: 32px;
+      padding: 17px;
+      overflow: hidden;
+    }
+    .a2n-s_card {
+      color: #303030;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #a2n_exam-board-total .a2n-s_card:last-child {
+      border-top: 1px solid #dcdcdc;
+      margin-top: 4px;
+      padding-top: 7px;
+    }
+    #a2n_enroll-btn {
+      background: #af1f47;
+      box-shadow: 0px 4px 20px 0px rgba(175, 31, 71, 0.3);
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      font-size: 16px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <div id="a2n_exam-board">
+      <h2 class="a2n_board-sec-title">Choose Your Booking Option</h2>
+      <div id="a2n_exam-board-options">
+        <div class="a2n_exam-board-single-option">
+          <label class="checkbox-container"
+            >Pearson Edexcel Accredited Online Course Only
+            <input type="radio" name="board-radio" onclick="updatePrice(79)" />
+            <span class="checkmark"></span>
+            <p class="la-show-black-friday-countdown-reminder">
+              <i class="fa fa-clock-o"></i> Only today left at this price!
+            </p>
+          </label>
+          <div class="a2n_exam-board-single-option-price">
+            <div class="entire-variable-prices">
+              <span> £<span class="course-sale-price">79</span> </span>
+              <span class="course-prev-price-wrap">
+                £<span class="course-prev-price">158</span>
+              </span>
+            </div>
+            <div class="entire-variable-discount">50% OFF</div>
+          </div>
+        </div>
+        <div class="a2n_exam-board-single-option">
+          <label class="checkbox-container"
+            >Pearson Edexcel Accredited Online Course + Official Paper Based
+            Exam (Exam Venue: London/Swindon)
+            <input type="radio" name="board-radio" onclick="updatePrice(249)" />
+            <span class="checkmark"></span>
+            <p class="la-show-black-friday-countdown-reminder">
+              <i class="fa fa-clock-o"></i> Only today left at this price!
+            </p>
+          </label>
+          <div class="a2n_exam-board-single-option-price">
+            <div class="entire-variable-prices">
+              <span> £<span class="course-sale-price">249</span> </span>
+              <span class="course-prev-price-wrap">
+                £<span class="course-prev-price">458</span>
+              </span>
+            </div>
+            <div class="entire-variable-discount">46% OFF</div>
+          </div>
+        </div>
+        <div class="a2n_exam-board-single-option">
+          <label class="checkbox-container"
+            >Official Paper Based Exam (Exam Venue: London/Swindon)
+            <input type="radio" name="board-radio" onclick="updatePrice(199)" />
+            <span class="checkmark"></span>
+            <p class="la-show-black-friday-countdown-reminder">
+              <i class="fa fa-clock-o"></i> Only today left at this price!
+            </p>
+          </label>
+          <div class="a2n_exam-board-single-option-price">
+            <div class="entire-variable-prices">
+              <span> £<span class="course-sale-price">199</span> </span>
+              <span class="course-prev-price-wrap">
+                £<span class="course-prev-price">420</span>
+              </span>
+            </div>
+            <div class="entire-variable-discount">53% OFF</div>
+          </div>
+        </div>
+      </div>
+      <div id="a2n_exam-board-total">
+        <div class="a2n-s_card">
+          <span>Subtotal</span>
+          <span>£<span class="a2n_sub-price">0</span></span>
+        </div>
+        <div class="a2n-s_card">
+          <span><b>Total (Excl. VAT)</b></span>
+          <span
+            ><b>£<span class="a2n_sub-price">0</span></b></span
+          >
+        </div>
+      </div>
+      <a href="#" id="a2n_enroll-btn">Buy Now</a>
+    </div>
+
+    <script>
+      function updatePrice(newPrice) {
+        var salePriceElements =
+          document.getElementsByClassName("a2n_sub-price");
+        for (var i = 0; i < salePriceElements.length; i++) {
+          salePriceElements[i].innerText = newPrice;
+        }
+      }
+    </script>
+  </body>
+</html>
